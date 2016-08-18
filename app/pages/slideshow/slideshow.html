@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-toolbar danger>
+    <ion-title>Play</ion-title>
+    <ion-buttons start>
+      <button (click)="playPhotos()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img #imagePlayer id="imagePlayer" alt="image">
+  </div>
+</ion-content>

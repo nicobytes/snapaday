@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar danger>
+    <ion-title>
+      Smile day!
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="playSlideshow()">
+        <ion-icon name="play"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <button ion-item *ngIf="!photoTaken" detail-none (click)="takePhoto()">
+      <ion-img src="http://placehold.it/350x150"></ion-img>
+    </button>
+    <ion-item-sliding *ngFor="let photo of photos; let i = index">
+      <ion-item>
+        <ion-img [src]="photo.image"></ion-img>
+        <ion-badge item-right light>{{photo.date | daysAgo}} days ago</ion-badge>
+      </ion-item>
+      <ion-item-options>
+        <button light (click)="removePhoto( photo )">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+  </ion-list>
+</ion-content>
